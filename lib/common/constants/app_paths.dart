@@ -1,3 +1,3 @@
-class AssetsPaths {
-  static const start = '/';
+class AppPaths {
+  static const home = '/';
 }

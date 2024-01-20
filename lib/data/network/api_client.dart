@@ -17,7 +17,7 @@ class ApiClient {
   Dio _configureDio() {
     final dio = Dio(
       BaseOptions(
-        baseUrl: 'https://rest.coinapi.io/v1',
+        baseUrl: envConfig.baseUrl,
         headers: {
           'X-CoinAPI-Key': envConfig.apiKey,
         },

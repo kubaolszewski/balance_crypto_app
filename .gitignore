@@ -43,6 +43,9 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
+# Environment config
+.env
+
 # Freezed generated files
 *.g.dart
 *.freezed.dart

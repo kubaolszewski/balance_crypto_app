@@ -2,19 +2,24 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
+import '../../common/config/env_config_interface.dart';
+
 class ApiClient {
-  ApiClient() {
+  ApiClient(
+    this.envConfig,
+  ) {
     dio = _configureDio();
   }
 
   late final Dio dio;
+  final EnvConfigInterface envConfig;
 
   Dio _configureDio() {
     final dio = Dio(
       BaseOptions(
         baseUrl: 'https://rest.coinapi.io/v1',
         headers: {
-          'apikey': 'AC91C75A-6B9B-4E11-8F80-1F123E2B216E',
+          'X-CoinAPI-Key': envConfig.apiKey,
         },
       ),
     );
